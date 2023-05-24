@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <div>
+                <h1>formulario</h1>
+            </div>
+            <form action="#" method="POST" id="formulario">
+                <div style="display: inline-block;">
+                    <div style="display: inline-block;">
+                        <label for="primerNombre_form">primer nombre</label>
+                        <div>
+                            <input type="text" id="primerNombre_form" placeholder="juan" />
+                        </div>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="segundoNombre_form">segundo nombre</label>
+                        <div>
+                            <input type="text" id="segundoNombre_form" placeholder="sebastian" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+
+                <div style="display: inline-block;">
+                    <div style="display: inline-block;">
+                        <label for="primerApellido_form">primer apellido</label>
+                        <div>
+                            <input type="text" id="primerApellido_form" placeholder="pepito" />
+                        </div>
+                    </div>
+                    <div style="display: inline-block;">
+                        <label for="segundoApellido_form">segundo apellido</label>
+                        <div>
+                            <input type="text" id="segundoApellido_form" placeholder="perez" />
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+
+                <div style="display: inline-block;">
+                    <div style="display: inline-block; padding-right: 20px;">
+                        <label for="tipoDeDocumento_form" id="label">Tipo de documento:</label>
+
+                        <div id="tablaDesplegable">
+                            <select id="tipoDeDocumento_form" name="tipoDocumento">
+                                <option value="seleccione">seleccione</option>
+                                <option value="CC">CC</option>
+                                <option value="TI">TI</option>
+                                <option value="Pasaporte">Pasaporte </option>
+                                <option value="PEP">PEP</option>
+                                <option value="Visa">Visa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: inline-block; padding: 10px;">
+                        <label for="cedula_form" id="label">numero de documento:</label>
+
+                        <div>
+                            <input type="text" id="cedula_form" placeholder="numero de documento">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <label id="Genero">Genero:</label>
+                <div>
+
+                    <label for="masculino_form">
+
+                        <input type="checkbox" id="masculino_form" name="masculino">
+                        masculino
+                    </label>
+
+                    <label for="femenino_form">
+                        <input type="checkbox" id="femenino_form" name="femenino">
+                        femenino
+                    </label>
+
+                    <label for="indefinido_form">
+                        <input type="checkbox" id="indefinido_form" name="indefinido">
+                        Indefinido
+                    </label>
+                </div>
+                <br />
+                <label for="correo_form">correo</label>
+                <div>
+                    <input type="text" id="correo_form" placeholder="ejemplo@gmail.com">
+                </div>
+                <br />
+                <label for="telefono_form">telefono</label>
+                <div>
+                    <input type="tel" id="telefono_form" placeholder="0123456789" />
+                </div>
+                <br />
+                <label for="direccion_form">direccion</label>
+                <div>
+                    <input type="text" name="direccion" id="direccion_form" pattern="[a-zA-Z0-9\s\,\#\-]+">
+                </div>
+                <br />
+                <label for="pais_form">País:</label>
+                <select id="pais_form">
+                    <option value="seleccione">seleccione</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Perú">Perú</option>
+                </select>
+                <br>
+
+                <label for="departamento_form">Departamento:</label>
+                <select id="departamento_form">
+                    <option value="seleccione">seleccione</option>
+                </select>
+                <br><br>
+
+                <label for="ciudad">Ciudad:</label>
+                <select id="ciudad">
+                    <option value="Medellín">Medellín</option>
+                    <option value="Envigado">Envigado</option>
+                    <option value="Itagüí">Itagüí</option>
+                    <option value="Barranquilla">Barranquilla</option>
+                    <option value="Soledad">Soledad</option>
+                    <option value="Cartagena">Cartagena</option>
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Chía">Chía</option>
+                    <option value="Mosquera">Mosquera</option>
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="La Plata">La Plata</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Cusco">C
+                </select>
+                <br />
+                <br />
+                <br />
+
+                <div>
+                    <button type="reset" id="nuevo" style="margin-right: 50px;">nuevo</button>
+                    <button type="button" id="agregar" onclick="validarDatos()"
+                        style="margin-right: 50px;">agregar</button>
+                    <button type="button" id="copiarForm" style="margin-right: 50px;">copiar</button>
+                </div>
+                <div>
+                    <button type="button" id="abrir_modal">abrir modal</button>
+                    <button type="button" id="abrir_historial">historial</button>
+                    <button type="button" id="create_table">tabla</button>
+
+                </div>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <dialog id="modal">
+                <div>
+                    <h1>formulario</h1>
+                </div>
+                <form action="#" method="POST" id="formulario_modal">
+                    <div style="display: inline-block;">
+                        <div style="display: inline-block;">
+                            <label for="primerNombre_modal">primer nombre</label>
+                            <div>
+                                <input type="text" id="primerNombre_modal" placeholder="juan" />
+                            </div>
+                        </div>
+
+                        <div style="display: inline-block;">
+                            <label for="segundoNombre_modal">segundo nombre</label>
+                            <div>
+                                <input type="text" id="segundoNombre_modal" placeholder="sebastian" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div style="display: inline-block;">
+                        <div style="display: inline-block;">
+                            <label for="primerApellido_modal">primer apellido</label>
+                            <div>
+                                <input type="text" id="primerApellido_modal" placeholder="pepito" />
+                            </div>
+                        </div>
+                        <div style="display: inline-block;">
+                            <label for="segundoApellido_modal">segundo apellido</label>
+                            <div>
+                                <input type="text" id="segundoApellido_modal" placeholder="perez" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <div style="display: inline-block;">
+                        <div style="display: inline-block; padding-right: 20px;">
+                            <label for="tipoDeDocumento_modal" id="label">Tipo de documento:</label>
+
+                            <div id="tablaDesplegable_modal">
+                                <select id="tipoDeDocumento_modal" name="tipoDocumento" onchange=updateInput()>
+                                    <option value="seleccione">seleccione</option>
+                                    <option value="CC">CC</option>
+                                    <option value="TI">TI</option>
+                                    <option value="Pasaporte">Pasaporte </option>
+                                    <option value="PEP">PEP</option>
+                                    <option value="Visa">Visa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display: inline-block; padding: 10px;">
+                            <label for="cedula_modal" id="label">numero de documento:</label>
+
+                            <div>
+                                <input type="text" id="cedula_modal" placeholder="numero de documento">
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <label id="Genero">Genero:</label>
+                    <div>
+
+                        <label for="masculino_modal">
+
+                            <input type="checkbox" id="masculino_modal" name="masculino">
+                            masculino
+                        </label>
+
+                        <label for="femenino_modal">
+                            <input type="checkbox" id="femenino_modal" name="femenino">
+                            femenino
+                        </label>
+                        s
+                        <label for="indefinido_modal">
+                            <input type="checkbox" id="indefinido_modal" name="indefinido">
+                            Indefinido
+                        </label>
+                    </div>
+                    <br />
+                    <label for="correo_modal">correo</label>
+                    <div>
+                        <input type="text" id="correo_modal" placeholder="ejemplo@gmail.com">
+                    </div>
+                    <br />
+                    <label for="telefono_modal">telefono</label>
+                    <div>
+                        <input type="tel" id="telefono_modal" placeholder="0123456789" />
+                    </div>
+                    <br />
+                    <label for="direccion_modal">direccion</label>
+                    <div>
+                        <input type="text" name="direccion" id="direccion_modal" pattern="[a-zA-Z0-9\s\,\#\-]+">
+                    </div>
+                    <br />
+                    <label for="pais_modal">País:</label>
+                    <select id="pais_modal">
+                        <option value="seleccione">seleccione</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Perú">Perú</option>
+                    </select>
+                    <br>
+
+                    <label for="departamento_modal">Departamento:</label>
+                    <select id="departamento_modal">
+                        <option value="seleccione">seleccione</option>
+                    </select>
+                    <br><br>
+
+                    <label for="ciudad2">Ciudad:</label>
+                    <select id="ciudad2">
+                        <option value="Medellín2">Medellín</option>
+                        <option value="Envigado2">Envigado</option>
+                        <option value="Itagüí2">Itagüí</option>
+                        <option value="Barranquilla2">Barranquilla</option>
+                        <option value="Soledad2">Soledad</option>
+                        <option value="Cartagena2">Cartagena</option>
+                        <option value="Bogotá2">Bogotá</option>
+                        <option value="Chía2">Chía</option>
+                        <option value="Mosquera2">Mosquera</option>
+                        <option value="Buenos Aires2">Buenos Aires</option>
+                        <option value="La Plata2">La Plata</option>
+                        <option value="Córdoba2">Córdoba</option>
+                        <option value="Mendoza2">Mendoza</option>
+                        <option value="Rio de Janeiro2">Rio de Janeiro</option>
+                        <option value="São Paulo2">São Paulo</option>
+                        <option value="Lima2">Lima</option>
+                        <option value="Cusco2">C
+                    </select>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div>
+
+                        <button type="submit" id="buscar" style="margin-right: 50px;">buscar</button>
+                        <button type="button" id="cerrar_modal">cerrar modal</button>
+                        <button type="button" id="CopiarModal" style="margin-right: 50px;">copiar--</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <dialog id="historial">
+                <h1>historial de registro</h1>
+                <div id="div_empleados">
+
+                </div>
+
+                <button type="button" id="cerrar_historial">cerrar</button>
+
+            </dialog>
+
+
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>nombre</th>
+                        <th>numero id</th>
+                        <th>telefono</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_body">
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+<script src="app.js"></script>
+
+</body>
+
+</html>
